@@ -15,5 +15,4 @@ UserRouter.delete('/adminapi/user/list/:id',UserController.delList)
 UserRouter.post('/adminapi/user/list/',UserController.updateList)
 
 
-
 module.exports = UserRouter;

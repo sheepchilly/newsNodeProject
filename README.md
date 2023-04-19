@@ -125,3 +125,15 @@ UserRouter.post('/adminapi/user/upload',upload.single('file'),UserController.upl
 1.UserRouter.delete('/adminapi/user/list/:id',UserController.delList)，删除注意接口是list！/:id是params占位符
 
 2.在controller中用 req.params.id 接收到路径当中的id值，然后把id传给UserService删除id匹配的模型数据
+
+# 5.新闻部分的接口
+
+1.创建新闻数据模型 -> NewsModule.js
+
+2.创建新闻路由 -> NewsRouter.js
+
+3.路由调用方法进行增删改查 -> NewsController.js
+
+4.方法把数据提交给Service对数据库进行增删改查 ->NewsService.js
+
+5.然后在app.js中进行接口注册 -> app.use(NewsRouter)
