@@ -55,7 +55,7 @@ app.use(UserRouter)
 
 ## 3.生成JWT
 
-1.下载JWT =>  npm i  jsonwebtoken ，新建utils文件夹，引入JWT，封装生辰token的generate()和验证token的verify()函数
+1.下载JWT =>  npm i  jsonwebtoken ，新建utils文件夹，引入JWT，封装生成token的generate()和验证token的verify()函数
 
 2.在UserController.js中生成token并给前端传递响应头
 
