@@ -12,6 +12,8 @@ const NewsRouter = require('./routes/admin/NewsRouter');
 const webNewsRouter = require('./routes/web/NewsRouter');
 const ProductRouter = require('./routes/admin/ProductRouter');
 const webProductRouter = require('./routes/web/ProductRouter');
+const IndexRouter = require('./routes/admin/indexRouter')
+const IndexProductRouter = require('./routes/web/indexRouter')
 
 const JWT = require('./utils/JWT');
 
@@ -31,9 +33,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//这里是web的路由，因为不用带token发请求，所以不放在if语句后面
 app.use(webNewsRouter)
 app.use(webProductRouter)
 app.use(UserProductRouter)
+app.use(IndexProductRouter)
+
 
 /*
   adminApi/* - 后台系统用的
@@ -70,6 +75,7 @@ app.use((req,res,next)=>{
 app.use(UserRouter)
 app.use(NewsRouter)
 app.use(ProductRouter)
+app.use(IndexRouter)
 
 
 // catch 404 and forward to error handler
